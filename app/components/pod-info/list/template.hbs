@@ -1,0 +1,27 @@
+<Utils::OpenState @isOpen={{true}} as |toggle open|>
+  <Ui::InfoBox class='m-2'>
+    <h3
+      class='border-b border-b-solid border-b-gray-400 text-lg leading-relaxed flex justify-between'
+    >
+      <span>{{@count}} {{@label}}</span>
+
+      <button
+        {{on 'click' toggle}}
+        class='text-base text-gray-400'
+        type='button'
+      >{{if open 'Hide' 'Show'}}</button>
+    </h3>
+
+    {{#if open}}
+      <ul class='mt-2 list-disc pl-4'>
+        {{#each @items as |item|}}
+          {{#if (has-block)}}
+            <li>{{yield item}}</li>
+          {{else}}
+            <li>{{item}}</li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    {{/if}}
+  </Ui::InfoBox>
+</Utils::OpenState>

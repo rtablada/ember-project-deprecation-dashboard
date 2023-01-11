@@ -1,0 +1,5 @@
+<button
+  type="button" class="{{if (eq @value @selected) "bg-white"}}"
+  {{on "click" (fn @onChange @value)}}
+  ...attributes>{{yield}}
+</button>

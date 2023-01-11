@@ -1,0 +1,13 @@
+<div class="basis-1/3 p-2
+  bg-white drop-shadow border-l border-l-solid border-l-gray-300
+  h-screen overflow-auto">
+  <h3 class="border-b border-b-solid border-b-gray-400 text-xl text-right leading-loose">{{this.model.podInfo.path}}</h3>
+
+  <PodInfo::List @label="Deprecations" @items={{this.model.podInfo.deprecationsFound}} @count={{this.model.podInfo.deprecationsCount}} />
+  <PodInfo::List @label="Lint Errors" @items={{this.model.podInfo.lintErrorsFound}} @count={{this.model.podInfo.lintErrorsCount}} />
+  <PodInfo::List @label="Components Used" @items={{this.model.podInfo.componentsUsed}} as |componentPath|>
+    <LinkTo @route="component" @query={{hash path=(component-name-to-path componentPath)}} class="text-blue-500 underline">
+      {{componentPath}}
+    </LinkTo>
+  </PodInfo::List>
+</div>

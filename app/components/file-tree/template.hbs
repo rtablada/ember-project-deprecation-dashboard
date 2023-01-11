@@ -1,0 +1,30 @@
+<Utils::OpenState as |toggle isOpen|>
+  <Ui::InfoBox class="m-2">
+    {{#if @directoryResult.deprecationsCount}}
+      <Alert::Counter @count={{@directoryResult.deprecationsCount}} />
+    {{/if}}
+
+    <div class="flex justify-between">
+      {{#if @directoryResult.fileCount}}
+        <button type="button" class="flex items-center" {{on "click" toggle}}>
+          <FaIcon @icon="caret-right"  />
+          <p class="ml-2">{{@directoryResult.path}}</p>
+        </button>
+
+        <LinkTo @route="pod-info" @query={{hash path=@directoryResult.path}} class="text-gray-400">{{@directoryResult.fileCount}} files</LinkTo>
+      {{else}}
+        <LinkTo @route="pod-info" @query={{hash path=@directoryResult.path}} class="flex items-center">
+          <p class="ml-2">{{@directoryResult.path}}</p>
+        </LinkTo>
+      {{/if}}
+
+    </div>
+
+
+    {{#if isOpen}}
+      {{#each @directoryResult.children as |childResult|}}
+        <FileTree @directoryResult={{childResult}} />
+      {{/each}}
+    {{/if}}
+  </Ui::InfoBox>
+</Utils::OpenState>
