@@ -1,6 +1,6 @@
 {
   "name": "ember-project-deprecation-dashboard",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "description": "A dashboard tool to keep track of Ember Project Deprecations",
   "repository": "",
