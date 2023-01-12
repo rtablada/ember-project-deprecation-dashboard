@@ -57,8 +57,9 @@ program
     let envString = indexFileContents.match(regex)[1];
     let envValue = JSON.parse(decodeURIComponent(envString));
 
-    envValue.rootURL = options.rootUrl ?? '/';
-    envValue.podDashboard.dataRoot = options.rootUrl ?? '/';
+    let rootUrl = options.rootUrl ? `/${options.rootUrl}/` : '/';
+    envValue.rootURL = rootUrl;
+    envValue.podDashboard.dataRoot = rootUrl;
     envValue.podDashboard.podModuleDirectory =
       options.podsDir ?? envValue.podDashboard.podModuleDirectory;
 
