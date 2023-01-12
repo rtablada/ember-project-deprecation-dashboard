@@ -33,6 +33,7 @@ module.exports = {
         './config/**/*.js',
         './lib/*/index.js',
         './server/**/*.js',
+        'tailwind.config.js',
         'cli.js',
       ],
       parserOptions: {

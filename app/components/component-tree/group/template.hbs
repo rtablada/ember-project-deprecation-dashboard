@@ -1,0 +1,25 @@
+<Utils::OpenState as |toggle isOpen|>
+  <Ui::InfoBox class='m-2'>
+    {{#if @group.deprecationsCount}}
+      <Alert::Counter @count={{@group.deprecationsCount}} />
+    {{/if}}
+
+    <div class='flex justify-between'>
+      <button type='button' class='flex items-center' {{on 'click' toggle}}>
+        <FaIcon @icon='{{if isOpen "caret-down" "caret-right"}}' />
+        <p class='ml-2'>{{@group.path}}</p>
+      </button>
+
+      <p
+        class='text-gray-400'
+      >{{@group.componentCount}} components</p>
+
+    </div>
+
+    {{#if isOpen}}
+      {{#each @group.children as |componentGroup|}}
+        <ComponentTree::ComponentResult @componentGroup={{componentGroup}} />
+      {{/each}}
+    {{/if}}
+  </Ui::InfoBox>
+</Utils::OpenState>

@@ -1,0 +1,18 @@
+<Ui::InfoBox class='m-2'>
+  {{#if @component.deprecationsCount}}
+    <Alert::Counter @count={{@component.deprecationsCount}} />
+  {{/if}}
+
+  <LinkTo
+    @route='component'
+    @query={{hash path=@component.path}}
+    class='flex justify-between'>
+    <p class='flex items-center'>
+      <p class='ml-2'> &lt;{{@component.componentName}} /&gt;</p>
+    </p>
+
+    <p class='text-gray-400'>{{@component.fileCount}} files</p>
+
+  </LinkTo>
+
+</Ui::InfoBox>

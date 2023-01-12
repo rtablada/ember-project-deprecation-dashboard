@@ -1,5 +1,6 @@
 <div ...attributes>
-  {{#each this.dataService.data.componentResults as |componentResult|}}
-    <ComponentFileTree @component={{componentResult}} />
+
+  {{#each this.componentData as |componentGroup|}}
+    <ComponentTree::ComponentResult @componentGroup={{componentGroup}} />
   {{/each}}
 </div>

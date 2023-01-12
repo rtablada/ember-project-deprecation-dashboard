@@ -1,0 +1,5 @@
+{{#if @componentGroup.isGroup}}
+  <ComponentTree::Group @group={{@componentGroup}} />
+{{else}}
+  <ComponentTree::Component @component={{@componentGroup.componentData}} />
+{{/if}}

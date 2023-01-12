@@ -4550,10 +4550,10 @@ ember-page-title@^7.0.0:
   dependencies:
     ember-cli-babel "^7.26.6"
 
-ember-project-deprecation-analysis@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/ember-project-deprecation-analysis/-/ember-project-deprecation-analysis-0.1.1.tgz#6b85e0089757200b5520abd3fa194d6d50e92478"
-  integrity sha512-36ytqgT8dWe8LJgz9hLONiP33WiXwqV1jYtrNmv58jd+xiZKJRkgqHe5qZZzXdOXcIVj5vkW/Ov3m4T9WTYfGA==
+ember-project-deprecation-analysis@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/ember-project-deprecation-analysis/-/ember-project-deprecation-analysis-0.1.2.tgz#469224d98945f4098ca22ab92b962302f55bd693"
+  integrity sha512-igRmF2g/Zx1iaZQROm7yl5+H50vVJXigqB862XaDXmT/oM1czt924k1EenSZO2ljtPYi45QFlLftJtRKLra5VA==
   dependencies:
     commander "^9.5.0"
     directory-tree "^3.5.1"
@@ -4707,7 +4707,7 @@ ember-truth-helpers@^3.1.1:
   dependencies:
     ember-cli-babel "^7.22.1"
 
-ember-unused-components@rtablada/ember-unused-components#rt/path-flexibility:
+"ember-unused-components@github:rtablada/ember-unused-components#rt/path-flexibility":
   version "1.2.0"
   resolved "https://codeload.github.com/rtablada/ember-unused-components/tar.gz/e91c82c49a26f7f19b84e68573c3311f43c74f7b"
   dependencies:
