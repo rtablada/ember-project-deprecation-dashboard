@@ -77,6 +77,9 @@ program
     }
 
     await writeFile(indexFilePath, indexFileContents, { encoding: 'utf-8' });
+    await writeFile(join(options.output, '404.html'), indexFileContents, {
+      encoding: 'utf-8',
+    });
 
     await writeFile(join(options.output, 'data.json'), JSON.stringify(result), {
       encoding: 'utf-8',
