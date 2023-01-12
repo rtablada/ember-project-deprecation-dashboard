@@ -57,8 +57,8 @@ program
     let envString = indexFileContents.match(regex)[1];
     let envValue = JSON.parse(decodeURIComponent(envString));
 
-    envValue.rootURL = options.rootURL ?? '/';
-    envValue.podDashboard.dataRoot = options.rootURL ?? '/';
+    envValue.rootURL = options.rootUrl ?? '/';
+    envValue.podDashboard.dataRoot = options.rootUrl ?? '/';
     envValue.podDashboard.podModuleDirectory =
       options.podsDir ?? envValue.podDashboard.podModuleDirectory;
 
@@ -69,10 +69,10 @@ program
       )}" />`
     );
 
-    if (options.rootURL) {
+    if (options.rootUrl) {
       indexFileContents = indexFileContents.replace(
         /"\/assets\//g,
-        `"/${options.rootURL}/assets/`
+        `"/${options.rootUrl}/assets/`
       );
     }
 
